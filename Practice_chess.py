@@ -162,13 +162,14 @@ def update():
     try:
         fen(new_fen)
     except Exception:
-        print("Error: FEN inválida")
+        print("Invalid FEN")
 
 btn = tk.Button(root, text="Refresh", command=update)
 btn.pack()
 
 
 root.mainloop()
+
 
 
 
