@@ -26,6 +26,7 @@ print (rg_chess)
 
 if not rg_chess:
     print('Invalid format')
+    print("Invalid letter or digit(0,9) written")
     print("Expected format: 8 rows separated by '/' with only letters (kqrbnpKQRBNP) and numbers (1-8)")
     exit()
 
@@ -126,7 +127,6 @@ def fen(chess):
                 c_index+=1
 
 entry = tk.Entry(root, width=60, font=("Consolas", 12))
-entry.insert(0, fen)
 entry.pack(pady=10)
 
 def update():
@@ -141,6 +141,7 @@ btn.pack()
 
 
 root.mainloop()
+
 
 
 
