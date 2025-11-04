@@ -22,7 +22,7 @@ print("Enter your string:")
 chess = input()
 rg_chess= re.fullmatch(r'([kqrbnpKQRBNP1-8]+/){7}[kqrbnpKQRBNP1-8]+', chess)
 
-print (rg_chess)
+
 parts = chess.split("/")
 
 def calc_Sum(chess):
@@ -114,7 +114,7 @@ def calc_Sum(chess):
         print("Cannot pursue, bad data")
         return None
     else:
-        print("Well")
+        print("The regular expression is valid, the regex returns:", rg_chess)
         return "Ok"
 
 Attempt=calc_Sum(chess)
@@ -169,6 +169,7 @@ btn.pack()
 
 
 root.mainloop()
+
 
 
 
