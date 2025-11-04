@@ -18,6 +18,8 @@ The program needs two modules from the Python standard library to function.
 
 The program ask for an input with the FEN to be graphed, after given instructions. We need a process to evaluate if the input has the needed requirements:
 
+  **2.1. The regular expression:** By using the module re, *re.fullmatch()* in specific, we're checking if all the text matches with the pattern  
+
 
 
 
