@@ -22,102 +22,74 @@ print("Enter your string:")
 chess = input()
 rg_chess= re.fullmatch(r'([kqrbnpKQRBNP1-8]+/){7}[kqrbnpKQRBNP1-8]+', chess)
 
+print (rg_chess)
+
+if not rg_chess:
+    print('Invalid format')
+    print("Expected format: 8 rows separated by '/' with only letters (kqrbnpKQRBNP) and numbers (1-8)")
+    exit()
+
+print("Valid input")
 
 parts = chess.split("/")
 
-def calc_Sum(chess):
 
+def calc_Sum(parts):
     if len(parts) != 8:
         print("WRONG: There must be 8 rows")
         return None
 
-    letters_v = 'kqrbnpKQRBNP'
     numbers_v = '12345678'
     error = False
     s = []
 
-
     for i, part in enumerate(parts, 1):
-        li = []
-        ni = []
-
-        for c in part:
-            if c.isalpha() and c not in letters_v:
-                li.append(c)
-            elif c.isdigit() and c not in numbers_v:
-                ni.append(c)
-
-
-        if li:
-            print(f"This letters are wrong: {', '.join(set(li))}")
-            error = True
-
-        if ni:
-            print(f"This numbers are bigger than the possibles in the row: {', '.join(set(ni))}")
-            error = True
-
-
-        if li or ni:
-            s.append(0)
-            continue
-
 
         summa = 0
-
         exceed = None
-        complete = None
 
         for j, c in enumerate(part):
             if c.lower() in 'kqrbnp':
                 value = 1
                 summa += value
-
             elif c in numbers_v:
                 value = int(c)
                 summa += value
 
-
-
             if summa > 8 and exceed is None:
                 exceed = (j, c, summa)
-
-
-            if summa == 8 and complete is None:
-                complete = (j, c)
-
-
-        print("Row correct")
-
 
         if summa > 8:
             if exceed:
                 pos, char, sum_at_the_point = exceed
                 if char.isdigit():
-                    print(
-                        f"The number'{char}' exceeds the available spaces in the board")
+                    print(f"The number '{char}' exceeds 8 spaces")
                 else:
-                    print(
-                        f"The letter '{char}' exceeds the available spaces in the board")
+                    print(f"The letter '{char}' exceeds 8 spaces")
             error = True
         elif summa < 8:
             print("There are not information enough about the board")
             error = True
         elif summa == 8:
-            print("Correct row")
-        else:
-            print("Blank space")
-            error = True
+            print(" Correct")
 
         s.append(summa)
 
     if error:
-        print("Cannot pursue, bad data")
+        print("VALIDATION FAILED")
         return None
     else:
-        print("The regular expression is valid, the regex returns:", rg_chess)
+        print("ALL ROWS VALID")
         return "Ok"
 
-Attempt=calc_Sum(chess)
+
+attempt = calc_Sum(parts)
+
+if attempt:
+    print("Correct")
+else:
+    print("Validation failed")
+
 
 #Board
 root = tk.Tk()
@@ -162,13 +134,14 @@ def update():
     try:
         fen(new_fen)
     except Exception:
-        print("Invalid FEN")
+        print("Error: FEN inválida")
 
 btn = tk.Button(root, text="Refresh", command=update)
 btn.pack()
 
 
 root.mainloop()
+
 
 
 
