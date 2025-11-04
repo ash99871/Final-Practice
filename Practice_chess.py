@@ -117,7 +117,7 @@ def calc_Sum(chess):
         print("Well")
         return "Ok"
 
-Atempt=calc_Sum(chess)
+Attempt=calc_Sum(chess)
 
 #Board
 root = tk.Tk()
@@ -169,6 +169,7 @@ btn.pack()
 
 
 root.mainloop()
+
 
 
 
