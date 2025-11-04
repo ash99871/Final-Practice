@@ -1,2 +1,4 @@
 # Final-Practice
-A program developed in Python implementing a parser for a FEN string representation of a chess board.
+### Owner: Ashly Sofia Robayo
+
+Its goal is to generate an interactive graphical interface using data parsed by regular expressions.
