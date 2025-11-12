@@ -1,7 +1,9 @@
 # Final-Practice
 ### Owner: Ashly Sofia Robayo
 
-### Video: https://www.youtube.com/watch?v=Dqvx9GNtqPU&list=PL06RwGLHjQbbVoopJL3LJ_MnXiX4jDjsi&pp=gAQB0gcJCbAEOCosWNin
+### Video: https://youtube.com/playlist?list=PL06RwGLHjQbbVoopJL3LJ_MnXiX4jDjsi&si=uyFVGtDl-bw5a-Dn
+
+
 
 
 
